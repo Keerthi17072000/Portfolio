@@ -188,6 +188,7 @@ section,footer{position:relative}
 /* ================= LIQUID GLASS ================= */
 /* Colourful drifting blobs fixed behind everything: the glass blurs/refracts these. */
 .ambient{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.ambient__layer{position:absolute;inset:0;will-change:transform}
 .ambient__blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;will-change:transform}
 .b1{width:42vw;height:42vw;background:#7c5cff;top:8%;left:-10%;animation:drift1 26s ease-in-out infinite alternate}
 .b2{width:36vw;height:36vw;background:#c6ff3d;opacity:.22;top:45%;right:-8%;animation:drift2 32s ease-in-out infinite alternate}

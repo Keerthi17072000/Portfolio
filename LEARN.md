@@ -130,6 +130,13 @@ Lenis ↔ ScrollTrigger: Lenis changes the scroll position smoothly, so in `useL
 | `Nav.tsx` | Hides on scroll down, returns on scroll up | `ScrollTrigger.onUpdate` checks `direction`, tweens `yPercent`. |
 | `Cursor.tsx`, `useMagnetic.ts` | Custom dot, magnetic buttons | `quickTo` follows the mouse; `mouseover` delegation grows the dot over links/cards. |
 
+### Parallax (depth on scroll)
+
+Parallax = layers moving at different speeds, which our eyes read as depth.
+- `useParallax(root)` (`hooks/useParallax.ts`) finds every `data-parallax="N"` element in a section and scrubs its `yPercent` from `-N` to `+N` while it crosses the viewport. Bigger N = faster drift. Add the attribute to any element to use it.
+- The fixed colour blobs (`Ambient` in `GlassEffects.tsx`) each travel a different distance over the whole page. GSAP moves a *wrapper* layer because the blob inside already has a CSS `drift` animation on `transform`; two things writing the same property would fight.
+- `gsap.matchMedia()` turns it off for `prefers-reduced-motion` and halves the travel on phones.
+
 ## 8. TypeScript crash course (what you see in the code)
 
 - `interface Project { name: string; hue: number }` — shape of an object.

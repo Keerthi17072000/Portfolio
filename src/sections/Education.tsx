@@ -1,9 +1,11 @@
 import { useRef } from 'react'
 import { gsap, useGSAP } from '../lib/gsap'
 import { education } from '../data/portfolio'
+import { useParallax } from '../hooks/useParallax'
 
 export default function Education() {
   const root = useRef<HTMLElement>(null)
+  useParallax(root)
 
   useGSAP(() => {
     gsap.from('.sec-label', { x: -30, opacity: 0, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: '.sec-label', start: 'top 90%' } })
@@ -14,8 +16,8 @@ export default function Education() {
     <section className="edu" id="education" ref={root}>
       <div className="sec-label mono"><span>05</span> Education</div>
       <div className="edu__grid">
-        {education.map((e) => (
-          <article className="card edu__card glass" key={e.title}>
+        {education.map((e, i) => (
+          <article className="card edu__card glass" key={e.title} data-parallax={i % 2 ? 5 : 2}>
             <span className="mono">{e.period}</span>
             <h3>{e.title}</h3>
             <p>{e.institute}</p>
