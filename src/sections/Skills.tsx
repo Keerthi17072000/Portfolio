@@ -20,7 +20,7 @@ export default function Skills() {
       <RevealHeading>Skills &amp; <i>stack</i></RevealHeading>
       <div className="skills__grid">
         {skills.map((g, i) => (
-          <article className="card skill" key={g.title}>
+          <article className="card skill glass" key={g.title}>
             <div className="mono card__n">/0{i + 1}</div>
             <h3>{g.title}</h3>
             <ul>{g.items.map((it) => <li key={it}>{it}</li>)}</ul>

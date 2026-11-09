@@ -5,6 +5,8 @@ import { useLenis } from './hooks/useLenis'
 import Loader from './components/Loader'
 import Nav from './components/Nav'
 import Cursor from './components/Cursor'
+import { Ambient, GlassFilter } from './components/GlassEffects'
+import { useGlassGlow } from './hooks/useGlassGlow'
 import ProgressBar from './components/ProgressBar'
 import Hero from './sections/Hero'
 import Marquee from './sections/Marquee'
@@ -19,6 +21,7 @@ export default function App() {
   // `ready` flips to true when the loader finishes → children start their intro animations.
   const [ready, setReady] = useState(false)
   useLenis()
+  useGlassGlow()
 
   // Lock scrolling while loading.
   useEffect(() => {
@@ -36,6 +39,8 @@ export default function App() {
 
   return (
     <>
+      <GlassFilter />
+      <Ambient />
       <Loader onDone={() => setReady(true)} />
       <ProgressBar />
       <Cursor />

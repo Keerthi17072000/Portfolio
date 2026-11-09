@@ -32,8 +32,8 @@ export default function Nav({ ready }: { ready: boolean }) {
 
   return (
     <header className="nav" ref={ref}>
-      <MagneticLink href="#hero" className="nav__logo">KR<em>.</em></MagneticLink>
-      <nav className="nav__links">
+      <MagneticLink href="#hero" className="nav__logo glass glass--liquid">KR<em>.</em></MagneticLink>
+      <nav className="nav__links glass glass--liquid">
         {links.map(([href, label]) => <MagneticLink key={href} href={href}>{label}</MagneticLink>)}
         <MagneticLink href="#contact" className="nav__cta">Let’s talk</MagneticLink>
       </nav>

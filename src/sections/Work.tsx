@@ -5,7 +5,7 @@ import type { Project } from '../types'
 
 function ProjectCard({ p, index }: { p: Project; index: number }) {
   return (
-    <article className="proj" style={{ '--h': p.hue } as CSSProperties}>
+    <article className="proj glass" style={{ '--h': p.hue } as CSSProperties}>
       <div className="proj__top mono"><span>0{index + 1}</span><span>{p.period}</span></div>
       <div className="proj__visual"><b>{p.code}</b></div>
       <h3>{p.name}</h3>

@@ -33,7 +33,7 @@ export default function Hero({ ready }: { ready: boolean }) {
       <div className="hero__orb orb1" />
       <div className="hero__orb orb2" />
       <div className="hero__meta">
-        <span className="tag"><i className="dot" /> Available for new opportunities</span>
+        <span className="tag glass glass--liquid"><i className="dot" /> Available for new opportunities</span>
         <span className="mono">{profile.location}</span>
       </div>
       <h1 className="hero__title" aria-label={profile.name}>

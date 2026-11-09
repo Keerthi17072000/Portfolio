@@ -50,8 +50,8 @@ export default function Contact() {
         <MagneticLink href={`mailto:${profile.email}`} className="btn" onClick={copyEmail}>
           <span>{copied ? 'Email copied ✓' : profile.email}</span><i>↗</i>
         </MagneticLink>
-        <MagneticLink href={`https://mail.google.com/mail/?view=cm&to=${profile.email}`} target="_blank" rel="noopener noreferrer" className="btn btn--ghost"><span>Open in Gmail</span><i>↗</i></MagneticLink>
-        <MagneticLink href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn--ghost"><span>LinkedIn</span><i>↗</i></MagneticLink>
+        <MagneticLink href={`https://mail.google.com/mail/?view=cm&to=${profile.email}`} target="_blank" rel="noopener noreferrer" className="btn btn--ghost glass"><span>Open in Gmail</span><i>↗</i></MagneticLink>
+        <MagneticLink href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn--ghost glass"><span>LinkedIn</span><i>↗</i></MagneticLink>
       </div>
       <div className="contact__foot mono">
         <span>© 2026 {profile.name}</span>
