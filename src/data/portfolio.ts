@@ -18,7 +18,9 @@ export const marqueeItems = [
 
 export const facts: Fact[] = [
   { value: 3, suffix: '+', label: 'Years of experience' },
+  { value: 6, suffix: '', label: 'Projects delivered' },
   { value: 100, suffix: '%', label: 'Responsive, always' },
+  { text: 'React', label: 'Primary stack' },
 ]
 
 export const skills: SkillGroup[] = [
