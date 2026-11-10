@@ -8,6 +8,7 @@ import Cursor from './components/Cursor'
 import { Ambient, GlassFilter } from './components/GlassEffects'
 import { useGlassGlow } from './hooks/useGlassGlow'
 import ProgressBar from './components/ProgressBar'
+import Chatbot from './components/Chatbot'
 import Hero from './sections/Hero'
 import Marquee from './sections/Marquee'
 import About from './sections/About'
@@ -56,6 +57,7 @@ export default function App() {
         <Education />
       </main>
       <Contact />
+      {ready && <Chatbot />}
     </>
   )
 }

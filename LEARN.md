@@ -137,6 +137,12 @@ Parallax = layers moving at different speeds, which our eyes read as depth.
 - The fixed colour blobs (`Ambient` in `GlassEffects.tsx`) each travel a different distance over the whole page. GSAP moves a *wrapper* layer because the blob inside already has a CSS `drift` animation on `transform`; two things writing the same property would fight.
 - `gsap.matchMedia()` turns it off for `prefers-reduced-motion` and halves the travel on phones.
 
+### Chatbot
+
+- `lib/chatbot.ts` is the brain: plain functions, no React. `answer(text)` matches keywords (regex) and builds replies from `data/portfolio.ts`, so editing your data updates the bot. Add a new topic by adding one `if (has(q, /keyword/))` branch.
+- The mail flow is a small **state machine**: `MailDraft.step` goes from → to → how → (context | body) → confirm. `mailStep(draft, input)` takes the current state plus the user's text and returns the next state plus the bot's reply. Mail is never sent silently: the bot opens a prefilled Gmail/`mailto:` draft and the visitor presses Send (a static site has no safe place to keep a mail/API key).
+- `components/Chatbot.tsx` is the UI. `useRef` holds the draft (changing it shouldn't re-render); `useState` holds what is on screen. `data-lenis-prevent` lets the message list scroll natively inside the smooth-scrolling page.
+
 ## 8. TypeScript crash course (what you see in the code)
 
 - `interface Project { name: string; hue: number }` — shape of an object.
